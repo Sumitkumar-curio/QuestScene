@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>
+/* Apply the saved theme before first paint — otherwise a light-mode user
+   gets a dark flash on every page load. Must stay inline and stay here. */
+(function () {
+  try {
+    var t = localStorage.getItem('qs-theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cubbon Cycling Club · QuestScene</title>
+<meta name="description" content="Early morning rides through Bangalore before the traffic wakes up.">
+<meta name="theme-color" content="#071018" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)">
+
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="QuestScene">
+<meta property="og:title"       content="Cubbon Cycling Club · QuestScene">
+<meta property="og:description" content="Early morning rides through Bangalore before the traffic wakes up.">
+<meta property="og:image"       content="assets/img/og-default.png">
+<meta name="twitter:card"       content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/app.css">
+<script>window.QS = { url: ".", csrf: "", uid: 0, staticDemo: true };</script>
+</head>
+<body class="">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-inner wrap">
+
+    <a class="logo" href="index.html" aria-label="QuestScene home">
+      <span class="logo-lockup"><svg class="logo-svg" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="qsGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#FFA23D"/>
+      <stop offset="55%"  stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA5A0B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="28" r="15" fill="none" stroke="url(#qsGrad1)" stroke-width="7"
+          stroke-linecap="round" stroke-dasharray="74 21" transform="rotate(28 24 28)"/>
+  <path d="M25 41 L41 41 L31 55 Z" fill="url(#qsGrad1)"/>
+  <path d="M59 20 C59 12 44 12 44 20 C44 28 59 28 59 36 C59 44 44 44 44 36"
+        fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+</svg><span class="logo-text">Quest<em>Scene</em></span></span>    </a>
+
+    <nav class="topnav" aria-label="Primary">
+      <a href="discover.html"    class="">Discover</a>
+      <a href="our-events.html" class="">Our Events</a>
+      <a href="communities.html" class="active">Communities</a>
+      <a href="forum.html"       class="">Forum</a>
+      <a href="play.html"        class="">Play</a>
+          </nav>
+
+    <div class="topbar-right">
+
+      <form class="city-picker" method="get" action="discover.html">
+        <span aria-hidden="true">📍</span>
+        <select name="city" onchange="this.form.submit()" aria-label="Change city">
+                      <option value="Bangalore" selected>Bangalore</option>
+                      <option value="Mumbai" >Mumbai</option>
+                      <option value="Delhi" >Delhi</option>
+                      <option value="Hyderabad" >Hyderabad</option>
+                      <option value="Pune" >Pune</option>
+                      <option value="Chennai" >Chennai</option>
+                  </select>
+      </form>
+
+      <a class="icon-btn" href="discover.html" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </a>
+
+      <button class="icon-btn js-theme" type="button" aria-label="Switch between dark and light mode">
+        <svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z"/></svg>
+        <svg class="ico-sun"  viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+      </button>
+
+              <a class="btn btn-ghost btn-sm" href="login.html">Log in</a>
+        <a class="btn btn-grad btn-sm" href="register.html">Join free</a>
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main">
+
+<div class="wrap section-tight">
+  <p class="breadcrumb"><a href="communities.html">Communities</a> › Bangalore</p>
+
+  <div class="panel" style="margin-bottom:22px">
+    <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+      <div class="ccard-media" style="width:76px;height:76px;border-radius:20px">
+                  <span class="ccard-emoji" style="font-size:2rem">🚴</span>
+              </div>
+
+      <div style="flex:1;min-width:220px">
+        <h1 style="font-size:clamp(1.4rem,5vw,2rem);margin-bottom:6px">
+          Cubbon Cycling Club                  </h1>
+        <div class="plan-meta" style="margin-bottom:10px">
+          <span class="chip">5 members</span>
+          <span class="chip">📍 Bangalore</span>
+          <span class="chip chip-cat">🚴 Cycling</span>        </div>
+        <p class="text-2" style="white-space:pre-wrap;margin-bottom:14px">Early morning rides through Bangalore before the traffic wakes up.</p>
+
+        <div class="btn-row">
+                      <form method="post">
+              <input type="hidden" name="_csrf" value="6b707a80e28eb8668b1a5d52341f8e767883eb6eb527b4d30015d37faa0cd982">              <button class="btn btn-grad" type="submit">
+                Join community              </button>
+            </form>
+          
+                  </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming -->
+  <section>
+        <div class="section-head">
+      <div>
+        <h2>Upcoming plans</h2>
+        <p class="muted">2 coming up</p>      </div>
+          </div>
+              <div class="grid">    <a class="pcard "
+       data-cat="hobbies"
+       data-tilt
+       href="plan-photography-walk-malleswaram.html">
+      <span class="pcard-3d">
+
+        <span class="pcard-media">
+                      <span class="pcard-glow" aria-hidden="true"></span>
+            <span class="pcard-emoji" aria-hidden="true">🎨</span>
+          
+          <span class="pcard-shine" aria-hidden="true"></span>
+
+          <span class="pcard-day">Wed 26 Aug · 7:00 AM</span>
+
+                      <span class="pcard-flag">Event</span>
+                  </span>
+
+        <span class="pcard-body">
+          <span class="pcard-meta">
+            <span class="chip chip-cat">🎨 Hobbies</span>
+            <span class="chip chip-free">Free</span>
+          </span>
+
+          <span class="pcard-title">Photography Walk: Malleswaram</span>
+
+          <span class="pcard-line">
+            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Malleswaram 8th Cross          </span>
+
+          <span class="pcard-foot">
+            <span class="facepile">
+                                                                <span class="face face-txt">PN</span>
+                                                                                <span class="face face-txt">RM</span>
+                              
+              <span class="facepile-txt">
+                                  <strong>2</strong> going
+                              </span>
+            </span>
+
+            <span class="spots ">
+              10 spots            </span>
+          </span>
+
+          <span class="pcard-bar" aria-hidden="true">
+            <span style="width: 17%"></span>
+          </span>
+        </span>
+
+      </span>
+    </a>
+        <a class="pcard "
+       data-cat="hobbies"
+       data-tilt
+       href="plan-sketch-meet-at-lalbagh.html">
+      <span class="pcard-3d">
+
+        <span class="pcard-media">
+                      <span class="pcard-glow" aria-hidden="true"></span>
+            <span class="pcard-emoji" aria-hidden="true">🎨</span>
+          
+          <span class="pcard-shine" aria-hidden="true"></span>
+
+          <span class="pcard-day">Mon 31 Aug · 8:00 AM</span>
+
+                  </span>
+
+        <span class="pcard-body">
+          <span class="pcard-meta">
+            <span class="chip chip-cat">🎨 Hobbies</span>
+            <span class="chip chip-free">Free</span>
+          </span>
+
+          <span class="pcard-title">Sketch Meet at Lalbagh</span>
+
+          <span class="pcard-line">
+            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Lalbagh West Gate          </span>
+
+          <span class="pcard-foot">
+            <span class="facepile">
+                                                                <span class="face face-txt">AS</span>
+                                                                                <span class="face face-txt">PN</span>
+                                                                                <span class="face face-txt">RM</span>
+                              
+              <span class="facepile-txt">
+                                  <strong>3</strong> going
+                              </span>
+            </span>
+
+            <span class="spots ">
+              11 spots            </span>
+          </span>
+
+          <span class="pcard-bar" aria-hidden="true">
+            <span style="width: 21%"></span>
+          </span>
+        </span>
+
+      </span>
+    </a>
+    </div>
+      </section>
+
+  <!-- Board -->
+  
+  <!-- Members -->
+  <section class="section">
+        <div class="section-head">
+      <div>
+        <h2>Members</h2>
+        <p class="muted">5 people</p>      </div>
+          </div>
+        <div class="people-grid">
+              <a class="person" href="profile-rahulmenon.html">
+          <span class="avatar avatar-md avatar-fallback">RM</span>          <span class="pname">Rahul</span>
+        </a>
+              <a class="person" href="profile-admin.html">
+          <span class="avatar avatar-md avatar-fallback">SK</span>          <span class="pname">Sumit</span>
+        </a>
+              <a class="person" href="profile-priyanair.html">
+          <span class="avatar avatar-md avatar-fallback">PN</span>          <span class="pname">Priya</span>
+        </a>
+              <a class="person" href="profile-arjunshetty.html">
+          <span class="avatar avatar-md avatar-fallback">AS</span>          <span class="pname">Arjun</span>
+        </a>
+              <a class="person" href="profile-divyarao.html">
+          <span class="avatar avatar-md avatar-fallback">DR</span>          <span class="pname">Divya</span>
+        </a>
+          </div>
+  </section>
+
+  <!-- Past -->
+    <section class="section">
+        <div class="section-head">
+      <div>
+        <h2>What they have already done</h2>
+        <p class="muted">Proof this group actually shows up</p>      </div>
+          </div>
+        <div class="grid">    <a class="pcard "
+       data-cat="cycling"
+       data-tilt
+       href="plan-past-nandi-sunrise.html">
+      <span class="pcard-3d">
+
+        <span class="pcard-media">
+                      <span class="pcard-glow" aria-hidden="true"></span>
+            <span class="pcard-emoji" aria-hidden="true">🚴</span>
+          
+          <span class="pcard-shine" aria-hidden="true"></span>
+
+          <span class="pcard-day">Sun 5 Jul · 10:50 PM</span>
+
+                  </span>
+
+        <span class="pcard-body">
+          <span class="pcard-meta">
+            <span class="chip chip-cat">🚴 Cycling</span>
+            <span class="chip chip-free">Free</span>
+          </span>
+
+          <span class="pcard-title">Nandi Hills Sunrise Ride</span>
+
+          <span class="pcard-line">
+            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Hebbal flyover          </span>
+
+          <span class="pcard-foot">
+            <span class="facepile">
+              
+              <span class="facepile-txt">
+                                  <strong>19</strong> going
+                              </span>
+            </span>
+
+            <span class="spots spots-low">
+              3 left            </span>
+          </span>
+
+          <span class="pcard-bar" aria-hidden="true">
+            <span style="width: 86%"></span>
+          </span>
+        </span>
+
+      </span>
+    </a>
+    </div>
+  </section>
+  
+  <!-- Share -->
+  <section class="section">
+    <h2 style="font-size:1.2rem">Share this community</h2>
+        <div class="share-row" data-share-url="community-cubbon-cycling-club.html" data-share-text="Join Cubbon Cycling Club on QuestScene">
+      <a class="share-btn" target="_blank" rel="noopener" href="https://wa.me/?text=Join%20Cubbon%20Cycling%20Club%20on%20QuestScene%20http%3A%2F%2Flocalhost%3A8000%2Fcommunity.php%3Fs%3Dcubbon-cycling-club">WhatsApp</a>
+      <a class="share-btn" target="_blank" rel="noopener" href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A8000%2Fcommunity.php%3Fs%3Dcubbon-cycling-club&text=Join%20Cubbon%20Cycling%20Club%20on%20QuestScene">Telegram</a>
+      <a class="share-btn" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Join%20Cubbon%20Cycling%20Club%20on%20QuestScene&url=http%3A%2F%2Flocalhost%3A8000%2Fcommunity.php%3Fs%3Dcubbon-cycling-club">X</a>
+      <button type="button" class="share-btn js-copy" data-copy="community-cubbon-cycling-club.html">Copy link</button>
+      <button type="button" class="share-btn js-native-share hidden">Share…</button>
+    </div>
+      </section>
+</div>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">
+        <span class="logo-lockup"><svg class="logo-svg" width="34" height="34" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="qsGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#FFA23D"/>
+      <stop offset="55%"  stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA5A0B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="28" r="15" fill="none" stroke="url(#qsGrad2)" stroke-width="7"
+          stroke-linecap="round" stroke-dasharray="74 21" transform="rotate(28 24 28)"/>
+  <path d="M25 41 L41 41 L31 55 Z" fill="url(#qsGrad2)"/>
+  <path d="M59 20 C59 12 44 12 44 20 C44 28 59 28 59 36 C59 44 44 44 44 36"
+        fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+</svg><span class="logo-text">Quest<em>Scene</em></span></span>      </a>
+      <p class="tagline">Step. <em>Out.</em> Stand Out.</p>
+      <p class="muted">Discover what's happening around you, make plans, join communities, and actually go do things.</p>
+          <div class="social-row">
+      <a class="social social-ig" href="https://instagram.com/questscene" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E1306C" stroke="none"/></svg>
+        Instagram @questscene      </a>
+      <a class="social social-tg" href="https://t.me/questscene" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.3L2.9 11.5c-1 .4-1 1.8.1 2.1l4.6 1.4 1.8 5.4c.3.8 1.3 1 1.9.4l2.5-2.4 4.6 3.4c.7.5 1.7.1 1.9-.7l3.2-15c.2-.9-.7-1.6-1.5-1.3z"/></svg>
+        Telegram @questscene      </a>
+              <a class="social social-mail" href="mailto:questscene@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+          questscene@gmail.com        </a>
+          </div>
+        </div>
+
+    <div>
+      <h4>Discover</h4>
+      <a href="discover.html">All plans</a>
+      <a href="discover.html">Events</a>
+      <a href="our-events.html">What we've run</a>
+      <a href="communities.html">Communities</a>
+      <a href="forum.html">Forum</a>
+      <a href="play.html">Play</a>
+    </div>
+
+    <div>
+      <h4>Create</h4>
+      <a href="create.html">Create a plan</a>
+      <a href="community-new.html">Start a community</a>
+      <a href="organizer.html">For organizers</a>
+    </div>
+
+    <div>
+      <h4>QuestScene</h4>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact us</a>
+      <a href="safety.html">Trust &amp; Safety</a>
+      <a href="mailto:questscene@gmail.com">questscene@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 QuestScene · Bangalore, India</span>
+    <span class="muted">Built for people who'd rather be outside.</span>
+  </div>
+</footer>
+
+<nav class="bottomnav" aria-label="Mobile">
+  <a href="index.html" class="">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="discover.html" class="">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <span>Discover</span>
+  </a>
+  <a href="create.html" class="bn-create" aria-label="Create a plan">
+    <span class="bn-fab">+</span>
+  </a>
+  <a href="chat.html" class="">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 01-8 8H4l2.2-2.6A8 8 0 1121 12z"/></svg>
+    <span>Chat</span>
+  </a>
+  <a href="login.html" class="">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0115 0"/></svg>
+    <span>Log in</span>
+  </a>
+</nav>
+
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/demo.js"></script></body>
+</html>

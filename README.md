@@ -9,11 +9,18 @@
 ![No build step](https://img.shields.io/badge/build%20step-none-F97316)
 ![Mobile first](https://img.shields.io/badge/mobile-first-3FA34D)
 
-> **This repository is the source code.** It is not the website.
-> QuestScene is a PHP + MySQL application, so it needs a host that runs PHP
-> (Hostinger, or any shared host with PHP 8 and MySQL).
-> **GitHub Pages cannot run it** — Pages only serves static files, which is why
-> visiting the Pages URL shows this README instead of the app.
+### ▶ [**Live preview → sumitkumar-curio.github.io/QuestScene**](https://sumitkumar-curio.github.io/QuestScene/)
+
+A static snapshot of the real app, so you can click through the whole interface without installing anything. **All five games are fully playable** — they run entirely in the browser.
+
+What the preview *cannot* do: joining plans, chat, posting and log-in all need the PHP backend. Those buttons explain themselves rather than failing silently.
+
+| | Preview | Live site |
+|---|---|---|
+| Browse plans, events, communities, profiles | ✅ | ✅ |
+| Play 2048 / Sudoku / Memory / Reaction / Tic-Tac-Toe | ✅ | ✅ |
+| Dark & light themes, 3D cards, animations | ✅ | ✅ |
+| Join a plan, chat, post, log in, leaderboards | ❌ | ✅ |
 
 ---
 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#FFA23D"/>
+      <stop offset="52%"  stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA5A0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Logo navy tile so the mark reads on light and dark browser chrome -->
+  <rect width="64" height="64" rx="16" fill="#14243F"/>
+
+  <!-- Q: the ring you step out of -->
+  <circle cx="27" cy="28" r="14" fill="none" stroke="url(#g)" stroke-width="7"
+          stroke-linecap="round" stroke-dasharray="69 20" transform="rotate(28 27 28)"/>
+  <path d="M27 40 L42 40 L33 53 Z" fill="url(#g)"/>
+
+  <!-- S: the trail -->
+  <path d="M55 22 C55 15 43 15 43 22 C43 29 55 29 55 36 C55 43 43 43 43 36"
+        fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+</svg>
