@@ -1,0 +1,74 @@
+# =====================================================================
+#  QuestScene — Apache config for Hostinger shared hosting
+#  Upload this together with the rest of public_html.
+# =====================================================================
+
+# ---- Default document -----------------------------------------------
+DirectoryIndex index.php index.html
+
+# ---- Never list a directory's contents ------------------------------
+Options -Indexes
+
+# ---- Protect the PHP that should never be requested directly --------
+<FilesMatch "^(config|db|auth|helpers|queries|components|header|footer)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Block dotfiles and backups
+<FilesMatch "^\.|\.(sql|log|bak|old|ini|sh|md)$">
+    Require all denied
+</FilesMatch>
+
+# ---- Force HTTPS (uncomment once your SSL certificate is active) -----
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ---- Pretty URLs (optional) -----------------------------------------
+# Turns /plan/sunday-5k into plan.php?s=sunday-5k.
+# If you enable this, also change plan_url()/community_url() in
+# includes/helpers.php to emit the short form.
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteRule ^plan/([a-z0-9\-]+)/?$      plan.php?s=$1      [L,QSA]
+#   RewriteRule ^community/([a-z0-9\-]+)/?$ community.php?s=$1 [L,QSA]
+#   RewriteRule ^u/([a-z0-9_]+)/?$          profile.php?u=$1   [L,QSA]
+# </IfModule>
+
+# ---- Security headers -----------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+</IfModule>
+
+# ---- Compression ----------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---- Caching --------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css                "access plus 7 days"
+    ExpiresByType application/javascript  "access plus 7 days"
+    ExpiresByType image/jpeg              "access plus 30 days"
+    ExpiresByType image/png               "access plus 30 days"
+    ExpiresByType image/webp              "access plus 30 days"
+    ExpiresByType image/svg+xml           "access plus 30 days"
+    ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+# ---- Upload limits (Hostinger allows these to be raised) ------------
+<IfModule mod_php.c>
+    php_value upload_max_filesize 8M
+    php_value post_max_size       10M
+</IfModule>
+
+# ---- Friendly error pages -------------------------------------------
+ErrorDocument 404 /404.php

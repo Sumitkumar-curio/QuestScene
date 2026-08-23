@@ -1,0 +1,20 @@
+{
+  "name": "QuestScene — Step. Out. Stand Out.",
+  "short_name": "QuestScene",
+  "description": "Discover what's happening around you, make plans, join communities, and actually go do things.",
+  "start_url": "index.php",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080B14",
+  "theme_color": "#080B14",
+  "categories": ["social", "lifestyle", "sports"],
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

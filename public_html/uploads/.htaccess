@@ -1,0 +1,14 @@
+# Uploads are user-supplied. Serve them as files, never execute them.
+#
+# php_flag is wrapped in IfModule on purpose: Hostinger runs LiteSpeed with
+# PHP as an external app, where a bare php_flag returns 500 Internal Server Error.
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+Options -ExecCGI -Indexes
+AddType text/plain .php .php3 .php4 .php5 .php7 .phtml .pl .py .cgi .sh
+
+<FilesMatch "\.(php|php[0-9]|phtml|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>

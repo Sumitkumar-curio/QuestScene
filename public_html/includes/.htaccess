@@ -1,0 +1,2 @@
+# Nothing in here is meant to be requested over HTTP.
+Require all denied

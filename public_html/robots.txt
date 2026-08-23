@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /includes/
+Disallow: /install.php
+Disallow: /settings.php
+Disallow: /dashboard.php
+Disallow: /chat.php
+Disallow: /notifications.php
+Disallow: /saved.php
+Disallow: /logout.php
+
+# Plan and community pages are meant to be shared and indexed.
+Allow: /plan.php
+Allow: /community.php
+
+Sitemap: https://questscene.com/sitemap.php

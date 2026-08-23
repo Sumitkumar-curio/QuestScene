@@ -1,0 +1,12 @@
+# Local machine settings — never deploy or commit these.
+public_html/includes/config.local.php
+
+# User uploads
+public_html/uploads/covers/*
+public_html/uploads/avatars/*
+!public_html/uploads/**/.gitkeep
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.log
