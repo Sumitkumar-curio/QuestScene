@@ -1,5 +1,3 @@
-<div align="center">
-
 # QuestScene
 
 ### Step. **Out.** Stand Out.
@@ -11,7 +9,11 @@
 ![No build step](https://img.shields.io/badge/build%20step-none-F97316)
 ![Mobile first](https://img.shields.io/badge/mobile-first-3FA34D)
 
-</div>
+> **This repository is the source code.** It is not the website.
+> QuestScene is a PHP + MySQL application, so it needs a host that runs PHP
+> (Hostinger, or any shared host with PHP 8 and MySQL).
+> **GitHub Pages cannot run it** — Pages only serves static files, which is why
+> visiting the Pages URL shows this README instead of the app.
 
 ---
 
