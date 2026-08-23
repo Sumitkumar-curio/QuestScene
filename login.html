@@ -16,15 +16,15 @@
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reaction Test · QuestScene</title>
-<meta name="description" content="Wait for green, then tap. Five rounds, averaged. Anything under 250ms is genuinely quick.">
+<title>Log in · QuestScene</title>
+<meta name="description" content="Discover what is happening around you, make plans, join communities, and actually go do things.">
 <meta name="theme-color" content="#071018" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)">
 
 <meta property="og:type"        content="website">
 <meta property="og:site_name"   content="QuestScene">
-<meta property="og:title"       content="Reaction Test · QuestScene">
-<meta property="og:description" content="Wait for green, then tap. Five rounds, averaged. Anything under 250ms is genuinely quick.">
+<meta property="og:title"       content="Log in · QuestScene">
+<meta property="og:description" content="Discover what is happening around you, make plans, join communities, and actually go do things.">
 <meta property="og:image"       content="assets/img/og-default.png">
 <meta name="twitter:card"       content="summary_large_image">
 
@@ -34,7 +34,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="stylesheet" href="assets/css/games.css">
 <script>window.QS = { url: ".", csrf: "", uid: 0, staticDemo: true };</script>
 </head>
 <body class="">
@@ -65,7 +64,7 @@
       <a href="our-events.html" class="">Our Events</a>
       <a href="communities.html" class="">Communities</a>
       <a href="forum.html"       class="">Forum</a>
-      <a href="play.html"        class="active">Play</a>
+      <a href="play.html"        class="">Play</a>
           </nav>
 
     <div class="topbar-right">
@@ -101,78 +100,33 @@
 
 <main id="main">
 
-<div class="wrap section-tight">
-  <p class="breadcrumb"><a href="play.html">← Play</a></p>
+<div class="auth-wrap">
+  <div class="auth-card">
+    <h1>Welcome back</h1>
+    <p class="lede">Something's happening near you right now.</p>
 
-  <div class="game-layout">
+    
+    <form method="post">
+      <input type="hidden" name="_csrf" value="407d4e0b8f79a6d754806c4edd28adc5cc7428ee5cdcfaf38474ec6d907c0176">      <input type="hidden" name="next" value="">
 
-    <!-- ============ THE GAME ============ -->
-    <div>
-      <div class="game-head">
-        <span class="game-emoji" aria-hidden="true">🔢</span>
-        <div style="flex:1;min-width:0">
-          <h1 style="font-size:1.5rem;margin:0">Reaction Test</h1>
-          <p class="muted" style="margin:2px 0 0;font-size:.85rem">How fast are you, really?</p>
-        </div>
-              </div>
-
-      
-      <!-- Each game script mounts itself into #game and reads these attributes. -->
-      <div id="game"
-           class="game-stage"
-           data-game="reaction"
-           data-seed="78093"
-           data-daily=""
-           data-signed-in="0">
-        <div class="game-loading">Loading Reaction Test…</div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input class="input" type="email" name="email" id="email" required autocomplete="email"
+               value="" placeholder="you@example.com">
       </div>
 
-      <noscript>
-        <div class="flash flash-error" style="margin-top:14px">
-          The games need JavaScript. Everything else on QuestScene works without it.
-        </div>
-      </noscript>
+      <div class="field">
+        <label for="password">Password</label>
+        <input class="input" type="password" name="password" id="password" required
+               autocomplete="current-password" placeholder="Your password">
+      </div>
 
-      <p class="muted" style="font-size:.85rem;margin-top:16px">Wait for green, then tap. Five rounds, averaged. Anything under 250ms is genuinely quick.</p>
-    </div>
+      <button class="btn btn-grad btn-lg btn-block" type="submit">Log in</button>
+    </form>
 
-    <!-- ============ SIDEBAR ============ -->
-    <aside>
-      <div class="panel panel-tight" style="margin-bottom:14px">
-        <h2 style="font-size:1rem;margin-bottom:10px">
-          Top players        </h2>
-
-                  <p class="muted" style="font-size:.86rem;margin:0">No scores yet. Yours would be first.</p>
-        
-                  <hr class="divider" style="margin:14px 0">
-          <p class="muted" style="font-size:.84rem;margin:0 0 10px">Log in and your scores get saved and ranked.</p>
-          <a class="btn btn-grad btn-sm btn-block" href="login.html">Log in</a>
-              </div>
-
-              <a class="panel panel-tight" href="play.html" style="display:block;margin-bottom:14px">
-          <strong style="font-size:.92rem">🎯 Today's challenge</strong><br>
-          <span class="muted" style="font-size:.84rem">
-            🧩 2048 — same board for everyone
-          </span>
-        </a>
-      
-      <div class="panel panel-tight">
-        <h2 style="font-size:.95rem;margin-bottom:8px">Other games</h2>
-                            <a href="game-2048.html" class="mini-game">
-            <span>🧩</span> 2048          </a>
-                            <a href="game-sudoku.html" class="mini-game">
-            <span>🧠</span> Sudoku          </a>
-                            <a href="game-memory.html" class="mini-game">
-            <span>🃏</span> Memory Match          </a>
-                                      <a href="game-tictactoe.html" class="mini-game">
-            <span>❌</span> Tic-Tac-Toe          </a>
-              </div>
-    </aside>
+    <p class="auth-alt">New here? <a href="register.html">Create a free account</a></p>
   </div>
 </div>
-
-<script src="assets/js/games/_shared.js" defer></script>
-<script src="assets/js/games/reaction.js" defer></script>
 
 </main>
 

@@ -16,15 +16,15 @@
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Memory Match · QuestScene</title>
-<meta name="description" content="Flip two cards at a time and remember what you saw. Fewer moves and less time means a better score.">
+<title>Sudoku · QuestScene</title>
+<meta name="description" content="Every puzzle is generated fresh and has exactly one solution. Fill the grid without repeating a digit in any row, column or box.">
 <meta name="theme-color" content="#071018" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)">
 
 <meta property="og:type"        content="website">
 <meta property="og:site_name"   content="QuestScene">
-<meta property="og:title"       content="Memory Match · QuestScene">
-<meta property="og:description" content="Flip two cards at a time and remember what you saw. Fewer moves and less time means a better score.">
+<meta property="og:title"       content="Sudoku · QuestScene">
+<meta property="og:description" content="Every puzzle is generated fresh and has exactly one solution. Fill the grid without repeating a digit in any row, column or box.">
 <meta property="og:image"       content="assets/img/og-default.png">
 <meta name="twitter:card"       content="summary_large_image">
 
@@ -109,10 +109,10 @@
     <!-- ============ THE GAME ============ -->
     <div>
       <div class="game-head">
-        <span class="game-emoji" aria-hidden="true">🃏</span>
+        <span class="game-emoji" aria-hidden="true">🧠</span>
         <div style="flex:1;min-width:0">
-          <h1 style="font-size:1.5rem;margin:0">Memory Match</h1>
-          <p class="muted" style="margin:2px 0 0;font-size:.85rem">Find all eight pairs</p>
+          <h1 style="font-size:1.5rem;margin:0">Sudoku</h1>
+          <p class="muted" style="margin:2px 0 0;font-size:.85rem">Four difficulties, one solution</p>
         </div>
               </div>
 
@@ -120,11 +120,11 @@
       <!-- Each game script mounts itself into #game and reads these attributes. -->
       <div id="game"
            class="game-stage"
-           data-game="memory"
-           data-seed="456577"
+           data-game="sudoku"
+           data-seed="134563"
            data-daily=""
            data-signed-in="0">
-        <div class="game-loading">Loading Memory Match…</div>
+        <div class="game-loading">Loading Sudoku…</div>
       </div>
 
       <noscript>
@@ -133,7 +133,7 @@
         </div>
       </noscript>
 
-      <p class="muted" style="font-size:.85rem;margin-top:16px">Flip two cards at a time and remember what you saw. Fewer moves and less time means a better score.</p>
+      <p class="muted" style="font-size:.85rem;margin-top:16px">Every puzzle is generated fresh and has exactly one solution. Fill the grid without repeating a digit in any row, column or box.</p>
     </div>
 
     <!-- ============ SIDEBAR ============ -->
@@ -160,9 +160,9 @@
         <h2 style="font-size:.95rem;margin-bottom:8px">Other games</h2>
                             <a href="game-2048.html" class="mini-game">
             <span>🧩</span> 2048          </a>
-                            <a href="game-sudoku.html" class="mini-game">
-            <span>🧠</span> Sudoku          </a>
-                                      <a href="game-reaction.html" class="mini-game">
+                                      <a href="game-memory.html" class="mini-game">
+            <span>🃏</span> Memory Match          </a>
+                            <a href="game-reaction.html" class="mini-game">
             <span>🔢</span> Reaction Test          </a>
                             <a href="game-tictactoe.html" class="mini-game">
             <span>❌</span> Tic-Tac-Toe          </a>
@@ -172,7 +172,7 @@
 </div>
 
 <script src="assets/js/games/_shared.js" defer></script>
-<script src="assets/js/games/memory.js" defer></script>
+<script src="assets/js/games/sudoku.js" defer></script>
 
 </main>
 

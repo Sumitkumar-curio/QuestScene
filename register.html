@@ -16,15 +16,15 @@
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2048 · QuestScene</title>
-<meta name="description" content="Swipe the tiles, merge matching numbers, and see how far past 2048 you can push before the grid jams up.">
+<title>Join QuestScene · QuestScene</title>
+<meta name="description" content="Create a free QuestScene account and start joining plans in your city.">
 <meta name="theme-color" content="#071018" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FBF9F7" media="(prefers-color-scheme: light)">
 
 <meta property="og:type"        content="website">
 <meta property="og:site_name"   content="QuestScene">
-<meta property="og:title"       content="2048 · QuestScene">
-<meta property="og:description" content="Swipe the tiles, merge matching numbers, and see how far past 2048 you can push before the grid jams up.">
+<meta property="og:title"       content="Join QuestScene · QuestScene">
+<meta property="og:description" content="Create a free QuestScene account and start joining plans in your city.">
 <meta property="og:image"       content="assets/img/og-default.png">
 <meta name="twitter:card"       content="summary_large_image">
 
@@ -34,7 +34,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="stylesheet" href="assets/css/games.css">
 <script>window.QS = { url: ".", csrf: "", uid: 0, staticDemo: true };</script>
 </head>
 <body class="">
@@ -65,7 +64,7 @@
       <a href="our-events.html" class="">Our Events</a>
       <a href="communities.html" class="">Communities</a>
       <a href="forum.html"       class="">Forum</a>
-      <a href="play.html"        class="active">Play</a>
+      <a href="play.html"        class="">Play</a>
           </nav>
 
     <div class="topbar-right">
@@ -101,78 +100,97 @@
 
 <main id="main">
 
-<div class="wrap section-tight">
-  <p class="breadcrumb"><a href="play.html">← Play</a></p>
+<div class="auth-wrap">
+  <div class="auth-card">
+    <h1>Join <span class="grad-text">QuestScene</span></h1>
+    <p class="lede">Free, and under a minute. Then go do something.</p>
 
-  <div class="game-layout">
+    
+    <form method="post">
+      <input type="hidden" name="_csrf" value="1e94ccca574b3e65889fca5cddb2c2505b392905ead10d8e65d1ed27ecb44d52">      <input type="hidden" name="next" value="">
 
-    <!-- ============ THE GAME ============ -->
-    <div>
-      <div class="game-head">
-        <span class="game-emoji" aria-hidden="true">🧩</span>
-        <div style="flex:1;min-width:0">
-          <h1 style="font-size:1.5rem;margin:0">2048</h1>
-          <p class="muted" style="margin:2px 0 0;font-size:.85rem">Slide, merge, chase 2048</p>
-        </div>
-              </div>
-
-      
-      <!-- Each game script mounts itself into #game and reads these attributes. -->
-      <div id="game"
-           class="game-stage"
-           data-game="2048"
-           data-seed="356501"
-           data-daily=""
-           data-signed-in="0">
-        <div class="game-loading">Loading 2048…</div>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input class="input" type="text" name="name" id="name" required maxlength="80"
+               autocomplete="name" value="" placeholder="Sumit Kumar">
       </div>
 
-      <noscript>
-        <div class="flash flash-error" style="margin-top:14px">
-          The games need JavaScript. Everything else on QuestScene works without it.
-        </div>
-      </noscript>
+      <div class="field">
+        <label for="email">Email</label>
+        <input class="input" type="email" name="email" id="email" required maxlength="160"
+               autocomplete="email" value="" placeholder="you@example.com">
+      </div>
 
-      <p class="muted" style="font-size:.85rem;margin-top:16px">Swipe the tiles, merge matching numbers, and see how far past 2048 you can push before the grid jams up.</p>
-    </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input class="input" type="password" name="password" id="password" required minlength="8"
+               autocomplete="new-password" placeholder="At least 8 characters">
+      </div>
 
-    <!-- ============ SIDEBAR ============ -->
-    <aside>
-      <div class="panel panel-tight" style="margin-bottom:14px">
-        <h2 style="font-size:1rem;margin-bottom:10px">
-          Top players        </h2>
+      <div class="field">
+        <label for="city">Where are you?</label>
+        <select class="select" name="city" id="city">
+                      <option value="Bangalore" selected>Bangalore</option>
+                      <option value="Mumbai" >Mumbai</option>
+                      <option value="Delhi" >Delhi</option>
+                      <option value="Hyderabad" >Hyderabad</option>
+                      <option value="Pune" >Pune</option>
+                      <option value="Chennai" >Chennai</option>
+                  </select>
+      </div>
 
-                  <ol class="board">
-                          <li class="board-row ">
-                <span class="board-rank top">1</span>
-                <span class="avatar avatar-xs avatar-fallback">SK</span>                <a class="board-name" href="profile-admin.html">Sumit Kumar</a>
-                <span class="board-score">3,300 pts</span>
-              </li>
-                      </ol>
-        
-                  <hr class="divider" style="margin:14px 0">
-          <p class="muted" style="font-size:.84rem;margin:0 0 10px">Log in and your scores get saved and ranked.</p>
-          <a class="btn btn-grad btn-sm btn-block" href="login.html">Log in</a>
-              </div>
+      <div class="field">
+        <span class="field-label">What do you enjoy? <span class="muted">(pick a few)</span></span>
+        <div class="optgrid">
+                      <input type="checkbox" name="interests[]" id="int1" value="1"
+                   >
+            <label for="int1"><span class="emo">🏃</span>Running</label>
+                      <input type="checkbox" name="interests[]" id="int2" value="2"
+                   >
+            <label for="int2"><span class="emo">🥾</span>Trekking</label>
+                      <input type="checkbox" name="interests[]" id="int3" value="3"
+                   >
+            <label for="int3"><span class="emo">⚽</span>Sports</label>
+                      <input type="checkbox" name="interests[]" id="int4" value="4"
+                   >
+            <label for="int4"><span class="emo">🚴</span>Cycling</label>
+                      <input type="checkbox" name="interests[]" id="int5" value="5"
+                   >
+            <label for="int5"><span class="emo">💪</span>Fitness</label>
+                      <input type="checkbox" name="interests[]" id="int6" value="6"
+                   >
+            <label for="int6"><span class="emo">🎨</span>Hobbies</label>
+                      <input type="checkbox" name="interests[]" id="int7" value="7"
+                   >
+            <label for="int7"><span class="emo">🎵</span>Music</label>
+                      <input type="checkbox" name="interests[]" id="int8" value="8"
+                   >
+            <label for="int8"><span class="emo">🎮</span>Gaming</label>
+                      <input type="checkbox" name="interests[]" id="int9" value="9"
+                   >
+            <label for="int9"><span class="emo">📚</span>Learning</label>
+                      <input type="checkbox" name="interests[]" id="int10" value="10"
+                   >
+            <label for="int10"><span class="emo">☕</span>Hangouts</label>
+                      <input type="checkbox" name="interests[]" id="int11" value="11"
+                   >
+            <label for="int11"><span class="emo">🚀</span>Founders</label>
+                      <input type="checkbox" name="interests[]" id="int12" value="12"
+                   >
+            <label for="int12"><span class="emo">✨</span>Other</label>
+                  </div>
+      </div>
 
-      
-      <div class="panel panel-tight">
-        <h2 style="font-size:.95rem;margin-bottom:8px">Other games</h2>
-                                      <a href="game-sudoku.html" class="mini-game">
-            <span>🧠</span> Sudoku          </a>
-                            <a href="game-memory.html" class="mini-game">
-            <span>🃏</span> Memory Match          </a>
-                            <a href="game-reaction.html" class="mini-game">
-            <span>🔢</span> Reaction Test          </a>
-                            <a href="game-tictactoe.html" class="mini-game">
-            <span>❌</span> Tic-Tac-Toe          </a>
-              </div>
-    </aside>
+      <button class="btn btn-grad btn-lg btn-block" type="submit">Create account</button>
+    </form>
+
+    <p class="auth-alt">Already here? <a href="login.html">Log in</a></p>
+    <p class="muted center" style="font-size:.74rem;margin-top:14px">
+      By joining you agree to keep QuestScene a place people feel safe showing up to.
+      See <a href="safety.html" style="color:var(--brand-3)">Trust &amp; Safety</a>.
+    </p>
   </div>
 </div>
-
-<script src="assets/js/games/_shared.js" defer></script>
-<script src="assets/js/games/2048.js" defer></script>
 
 </main>
 
